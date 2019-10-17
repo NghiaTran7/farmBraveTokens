@@ -20,22 +20,23 @@ def autoMove():
     #hoovers mouse over certain parameters for pixels, and then clicks on it.
     pyautogui.moveTo(3485, 1934, duration=0.25)
     pyautogui.click(button='left')
-    time.sleep(5)
     print('WE farming for you')
+    time.sleep(260)
 
+#schedules to run the automove every 12 miuntes
 def timeBot():
 
     while True:
         autoMove()
 
-        dt = datetime.now() + timedelta(hours=.20)
+        dt = datetime.now() + timedelta(hours=0.5)
         dt = dt.replace(minute=5)
 
         while datetime.now() < dt:
-            time.sleep(1)
+            time.sleep(.5)
 
 
 if __name__ == '__main__':
-    #printPosition()
+    #printPosition
     #autoMove()
     timeBot()
