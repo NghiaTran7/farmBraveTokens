@@ -1,4 +1,5 @@
 import pyautogui, time
+from datetime import datetime, timedelta
 
 #helper function that prints x,y coordinate of my display in order to close brave ad display(farming BAT coins)
 
@@ -22,8 +23,19 @@ def autoMove():
     time.sleep(5)
     print('WE farming for you')
 
+def timeBot():
+
+    while True:
+        autoMove()
+
+        dt = datetime.now() + timedelta(hours=.20)
+        dt = dt.replace(minute=5)
+
+        while datetime.now() < dt:
+            time.sleep(1)
 
 
 if __name__ == '__main__':
     #printPosition()
-    autoMove()
+    #autoMove()
+    timeBot()
