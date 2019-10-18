@@ -25,22 +25,34 @@ def autoMove():
     #hoovers mouse over certain parameters for pixels, and then clicks on it.
     #4 minute intervals
     pyautogui.moveTo(3485, 1934, duration=0.25)
-    pyautogui.click(button='left')
-    print('WE farming for you')
+    #pyautogui.click(button='left')
+    print('WE are hard at work, farming for you! Sit back, relax, and watch the BAT coins roll in!!!!')
     start = time.time()
-    print("Start time: " + str(start))
-    end = time.time()
-    time.sleep(240)
+    time.sleep(15)
     end = time.time()
     ending = end-start
     ending2 = str(round(ending, 2))
-    print ('Ending time: ' + str(ending2))
+    print ('Duration of script: ' + str(ending2) + " seconds")
+
+#function to refresh amazon browser every 2 minutes 30 seconds
+def autoRefresh():
+    pyautogui.typewrite(['f5'])
+    print ('We refreshed your browser to trick them into giving us more ads!! MUAHAHAHAHA!!!!')
+    time.sleep(15)
+
+def autoClick():
+    pyautogui.click(button='left')
+    print ('We clicked left!')
+
 
 #schedules to run the automove
 def timeBot():
 
     while True:
         autoMove()
+        autoClick()
+        autoRefresh()
+
 
         dt = datetime.now() + timedelta(hours=0)
         dt = dt.replace(minute=0)
@@ -50,6 +62,6 @@ def timeBot():
 
 
 if __name__ == '__main__':
-    #printPosition
+    #printPosition()
     #autoMove()
     timeBot()
