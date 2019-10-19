@@ -62,7 +62,7 @@ def timeBot():
 
 
 if __name__ == '__main__':
+    pyautogui.FAILSAFE = False
     #printPosition()
     #autoMove()
     timeBot()
-    pyautogui.FAILSAFE = False
