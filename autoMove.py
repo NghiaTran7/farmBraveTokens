@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-import schedule
 import pyautogui
 import time
 
